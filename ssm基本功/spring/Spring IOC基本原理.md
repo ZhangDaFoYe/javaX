@@ -1122,7 +1122,7 @@ public void registerDependentBean(String beanName, String dependentBeanName) {
 
 #### 3.8 如果需要类型转换则转换最终返回bean
 
-注释代码这里不展开
+代码过程很好理解 这里不做深入探究
 
 #### 小结
 
