@@ -1,7 +1,5 @@
 ​	
 
-![blue water and island](assets/%E4%B8%8D%E9%9C%80%E8%A6%81%E6%AD%BB%E8%AE%B0%E7%A1%AC%E8%83%8C%E7%9A%84jvm%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/photo-1579069260854-450fadfff665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80)
-
 # 前言
 
 > 对基本原理的了解,动手是最好的;
