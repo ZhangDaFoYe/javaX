@@ -345,12 +345,6 @@ com.alibaba.dubbo.common.extension
  |--SPI   #扩展点注解
 ```
 
-
-
-
-
-
-
 # 最后
 
 ## 画图工具
