@@ -345,11 +345,9 @@ com.alibaba.dubbo.common.extension
  |--SPI   #扩展点注解
 ```
 
-# 最后
+## 技术总结
 
-## 画图工具
-
-[draw.io](https://www.draw.io/)
+- 随处可见的双检锁(DCL)用法
 
 ## 项目链接
 
