@@ -61,7 +61,7 @@ MODEL层映射到VIEW层,给用户展示;用户对MODEL使用更新通过CONTROL
 - 3.调用Service
 - 4.BO出参转VO
 
-```java
+```
 public class OrderController {
     @Resource
     private OrderService orderService;
@@ -89,7 +89,7 @@ public class OrderController {
 - 3.操作数据库
 - 4.整合返回结果
 
-```java
+```
 @Service
 public class OrderServiceImpl implements OrderService {
   @Resource
@@ -129,7 +129,7 @@ public class OrderServiceImpl implements OrderService {
 
 首先车嘛,既然有新车就会有二手车,当时我有个需求改造,要取车辆信息的费用;当时设计的时候是用了两张表,一个新车费用表,一个二手车费用表;当时有个车辆的类型叫xx二手车,你觉得这个类型的车是从新车费用表去获取还是二手车费用表获取呢?正常人都会认为是二手车费用表,事后有同事跟我说这块的逻辑取的有问题,还好我当时机智,因为我也是半道接的需求,我哪里知道有多少类型的车,我的直觉也应该取二手车费用表的字段,列下我当时写的取数逻辑
 
-```java
+```
     public Long getAmt() {
         if (null != orderFeeDO) {
             return orderFeeDO.getAmount();
@@ -143,7 +143,7 @@ public class OrderServiceImpl implements OrderService {
 
 真的是坑啊,还好我是判断新车费用表是否空,不然我凉了;因为在这之前做过相关系统DDD的改造,就联想到,费用既然做为车辆信息领域的一部分,如果有个CarInfoEntity那该多好,那么后续使用的人就根本不需要care里面的数据处理了,直接拿来用了,
 
-```java
+```
 public class CarInfoEntity {
     /**
      * 获取车辆费用
@@ -220,7 +220,7 @@ public class CarInfoEntity {
 
 比如我去描述一个用户的地址信息,首先它是个值对吧;然后这个值由省份+城市+区县+街道+邮政编码构成,那我们描述这个值就应该用一个对象构造去描述,这样固定构成的,就像下面这样
 
-```java
+```
 public class Address {
     /**
      * 省份
@@ -364,7 +364,7 @@ com.xx.yy
 
 ###### 创建支付单示例代码
 
-```java
+```
 public ResultDTO<CreatePayDTO> createPayOrder(CreatePayCmd cmd) {
         if (null == cmd || null == cmd.getOrderNo()) {
             return ResultDTO.fail(ErrorCodeUtil.errorMsg(CommonErrorEnum.ILLEGAL_ARGUMENT));
@@ -413,7 +413,7 @@ public ResultDTO<CreatePayDTO> createPayOrder(CreatePayCmd cmd) {
 
 ###### 支付单消费
 
-```java
+```
     public ConsumeResult payResultConsume(Map<String, Object> map) {
         String mqStr = JSON.toJSONString(map);
         log.info("支付结果消息 mqStr{}", mqStr);
