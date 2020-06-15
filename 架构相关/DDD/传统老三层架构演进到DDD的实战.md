@@ -300,7 +300,7 @@ public class Address {
 
 > 这里我剔除了之前实战不合理的划分
 
-```
+```xml
 com.xx.yy
 	- common						 -- 通用层(配置常量,aop工具)
 		- aop
@@ -315,7 +315,7 @@ com.xx.yy
 		- pay									-- 支付相关
 			* PayAppService.java
 		- carserve				  	-- 车辆服务
-    	* CarServeAppService.java
+			* CarServeAppService.java
 		- cardeliver 					-- 车辆交付
 			* CarDeliverAppService.java
 			
@@ -352,8 +352,6 @@ com.xx.yy
     	- adapter				 -- 适配层
     		- req
     		- res
-	
-	
 ```
 
 - 其实模块这方面就是按照功能进行了分包这点跟三层架构很多地方都是类似的;
