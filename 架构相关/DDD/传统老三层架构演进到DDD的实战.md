@@ -302,6 +302,7 @@ public class Address {
 
 ```xml
 com.xx.yy
+
 	- common --> 通用层(配置常量,aop工具)
 		- aop
 		- config
@@ -319,22 +320,22 @@ com.xx.yy
 		- cardeliver --> 车辆交付
 			* CarDeliverAppService.java
 
-  - domain --> 领域层
-    - order --> 订单领域
-    - contract --> 合同领域
-    - pay --> 支付领域
-    - carserve --> 车辆服务领域			
-    - cardeliver --> 车辆交付领域
+    - domain --> 领域层
+        - order --> 订单领域
+        - contract --> 合同领域
+        - pay --> 支付领域
+        - carserve --> 车辆服务领域			
+        - cardeliver --> 车辆交付领域
 
-  - query --> 查询服务(这里参考CQRS模式,将Q独立出来平行于应用层)
-    - order --> 订单相关的查询
-    - contract --> 合同相关的查询
-    - pay --> 支付相关的查询
-    - carserve --> 车辆服务相关的查询
+    - query --> 查询服务(这里参考CQRS模式,将Q独立出来平行于应用层)
+        - order --> 订单相关的查询
+        - contract --> 合同相关的查询
+        - pay --> 支付相关的查询
+        - carserve --> 车辆服务相关的查询
 
-  - mq --> MQ这一层其实类似于用户接口层,我们是处于被动接收的一方
-    - pay
-      * PayConsumer.java
+    - mq --> MQ这一层其实类似于用户接口层,我们是处于被动接收的一方
+        - pay
+        * PayConsumer.java
 
 	- infrastructure --> 基础设施层
 		- statemachine -->  状态机	
@@ -343,16 +344,16 @@ com.xx.yy
 		- aynctask --> 异步任务
 			- pay
 				* xxTask.java
-	- dao --> dao层
-		- model
-			*PayDO.java
-	- service
-		- impl
+	    - dao --> dao层
+		    - model
+			    *PayDO.java
+	    - service
+		    - impl
 			* PayDao.java
-	- rpc
-		- adapter --> 适配层
-		- req
-		- res
+	    - rpc
+		    - adapter --> 适配层
+		    - req
+		    - res
 ```
 
 - 其实模块这方面就是按照功能进行了分包这点跟三层架构很多地方都是类似的;
