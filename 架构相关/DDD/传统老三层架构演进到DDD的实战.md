@@ -498,3 +498,5 @@ public ResultDTO<CreatePayDTO> createPayOrder(CreatePayCmd cmd) {
 ## END
 
 > 既然白嫖到这里,希望观众老爷们来个一键三连
+
+![扫码_搜索联合传播样式-标准色版](assets/传统老三层架构演进到DDD的实战/扫码_搜索联合传播样式-标准色版.png)
