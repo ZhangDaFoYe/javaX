@@ -497,7 +497,7 @@ public ResultDTO<CreatePayDTO> createPayOrder(CreatePayCmd cmd) {
 
 ## END
 
-[原文地址]([https://github.com/ZhangDaFoYe/javaX/blob/master/%E6%9E%B6%E6%9E%84%E7%9B%B8%E5%85%B3/DDD/%E4%BC%A0%E7%BB%9F%E8%80%81%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B%E5%88%B0DDD%E7%9A%84%E5%AE%9E%E6%88%98.md](https://github.com/ZhangDaFoYe/javaX/blob/master/架构相关/DDD/传统老三层架构演进到DDD的实战.md))
+[原文地址](https://github.com/ZhangDaFoYe/javaX/blob/master/%E6%9E%B6%E6%9E%84%E7%9B%B8%E5%85%B3/DDD/%E4%BC%A0%E7%BB%9F%E8%80%81%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B%E5%88%B0DDD%E7%9A%84%E5%AE%9E%E6%88%98.md)
 
 > 既然白嫖到这里,希望观众老爷们来个一键三连
 
