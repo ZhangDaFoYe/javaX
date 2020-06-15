@@ -344,15 +344,15 @@ com.xx.yy
             - pay
                 * xxTask.java
 	    - dao --> dao层
-		    - model
-			    *PayDO.java
+            - model
+                *PayDO.java
 	    - service
-		    - impl
-			* PayDao.java
+            - impl
+            * PayDao.java
 	    - rpc
-		    - adapter --> 适配层
-		    - req
-		    - res
+            - adapter --> 适配层
+            - req
+            - res
 ```
 
 - 其实模块这方面就是按照功能进行了分包这点跟三层架构很多地方都是类似的;
