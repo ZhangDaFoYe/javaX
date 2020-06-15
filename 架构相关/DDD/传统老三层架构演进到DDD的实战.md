@@ -350,7 +350,7 @@ com.xx.yy
         - service
             - impl
                 * PayDao.java
-        - rpc
+        - rpc --> 外部接口
             - adapter --> 适配层
             - req
             - res
