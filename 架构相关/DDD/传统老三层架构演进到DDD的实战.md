@@ -336,20 +336,21 @@ com.xx.yy
     - mq --> MQ这一层其实类似于用户接口层,我们是处于被动接收的一方
         - pay
         * PayConsumer.java
-	- infrastructure --> 基础设施层
+        
+    - infrastructure --> 基础设施层
         - statemachine -->  状态机	
             - action
             - event
         - aynctask --> 异步任务
             - pay
                 * xxTask.java
-	    - dao --> dao层
+        - dao --> dao层
             - model
                 *PayDO.java
-	    - service
+        - service
             - impl
             * PayDao.java
-	    - rpc
+        - rpc
             - adapter --> 适配层
             - req
             - res
