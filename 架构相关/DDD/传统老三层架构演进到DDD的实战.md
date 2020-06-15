@@ -302,10 +302,10 @@ public class Address {
 
 ```xml
 com.xx.yy
-- common						 -- 通用层(配置常量,aop工具)
-- aop
-- config
-- constant
+	- common						 -- 通用层(配置常量,aop工具)
+		- aop
+		- config
+		- constant
 
 - application					-- 应用层
 - order								-- 订单相关
