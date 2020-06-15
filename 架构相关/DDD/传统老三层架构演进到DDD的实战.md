@@ -302,56 +302,57 @@ public class Address {
 
 ```xml
 com.xx.yy
-	- common						 -- 通用层(配置常量,aop工具)
+	- common --> 通用层(配置常量,aop工具)
 		- aop
 		- config
 		- constant
 
-	- application					-- 应用层
-		- order								-- 订单相关
+	- application --> 应用层
+		- order --> 订单相关
 			* OrderAppService.java
-		- contract						-- 合同相关
+		- contract --> 合同相关
 			* ContractAppService.java
-		- pay									-- 支付相关
+		- pay --> 支付相关
 			* PayAppService.java
-		- carserve				  	-- 车辆服务
+		- carserve --> 车辆服务
 			* CarServeAppService.java
-		- cardeliver 					-- 车辆交付
+		- cardeliver --> 车辆交付
 			* CarDeliverAppService.java
 
-- domain							-- 领域层
-- order								-- 订单领域
-- contract						-- 合同领域
-- pay									-- 支付领域
-- carserve				  	-- 车辆服务领域			
-- cardeliver 					-- 车辆交付领域
+  - domain --> 领域层
+    - order --> 订单领域
+    - contract --> 合同领域
+    - pay --> 支付领域
+    - carserve --> 车辆服务领域			
+    - cardeliver --> 车辆交付领域
 
-- query								-- 查询服务(这里参考CQRS模式,将Q独立出来平行于应用层)
-- order								-- 订单相关的查询
-- contract						-- 合同相关的查询
-- pay									-- 支付相关的查询
-- carserve				  	-- 车辆服务相关的查询
+  - query --> 查询服务(这里参考CQRS模式,将Q独立出来平行于应用层)
+    - order --> 订单相关的查询
+    - contract --> 合同相关的查询
+    - pay --> 支付相关的查询
+    - carserve --> 车辆服务相关的查询
 
-- mq									-- MQ这一层其实类似于用户接口层,我们是处于被动接收的一方
-- pay
-* PayConsumer.java
-- infrastructure 			-- 基础设施层
-- statemachine			-- 状态机	
-- action
-- event
-- aynctask					-- 异步任务
-- pay
-* xxTask.java
-- dao								-- dao层
-- model
-*PayDO.java
-- service
-- impl
-* PayDao.java
-- rpc
-- adapter				 -- 适配层
-- req
-- res
+  - mq --> MQ这一层其实类似于用户接口层,我们是处于被动接收的一方
+    - pay
+      * PayConsumer.java
+
+	- infrastructure --> 基础设施层
+		- statemachine -->  状态机	
+			- action
+			- event
+		- aynctask --> 异步任务
+			- pay
+				* xxTask.java
+	- dao --> dao层
+		- model
+			*PayDO.java
+	- service
+		- impl
+			* PayDao.java
+	- rpc
+		- adapter --> 适配层
+		- req
+		- res
 ```
 
 - 其实模块这方面就是按照功能进行了分包这点跟三层架构很多地方都是类似的;
@@ -475,11 +476,18 @@ public ResultDTO<CreatePayDTO> createPayOrder(CreatePayCmd cmd) {
 - 当时开发讨论后定的领域实体和数据库对象画等号,出于某种折中的理由,其实很不合理;
 - 当时的项目是快速上线的一版,逻辑比较简单,上面的例子没体现出领域服务,不过不要紧,你了解服务的定位,其实在后面你的实际工作中,你应该知道怎么编排代码
 
+##### 实战之后vs三层架构的感觉
+
+- DDD充血模型,使得领域对象有更多的能力,比如创建订单,订单校验逻辑,关单等等
+- 三层架构说的通透一点,任何逻辑无非是从入口调用到service,一直捅到dao;发展个1年半载,就像我前面提到的案例,你根本就描述不清楚这个领域的某些具体特征或者逻辑判断
+- 千万不要将DO=领域实体,这百分百是错误的;你可以在新项目将DO建模可以往核心领域去靠,但是千万不要去划等号
+
 ## 技术总结
 
 - 首先我们要知道DDD是什么,是一种架构？为什么现在很多大厂用DDD解决业务复杂性问题?那么接下来就要了解他的优势和三层架构进行对比?再接下来就结合自己的项目进行实战;
 - 没有实践过的同学们可以参考本篇文章或者去网上clone一些DDD examples进行理论实践结合
 - 上面的实战案例只是做一个抛转引玉,可能感觉这种方式和老三层没什么区别;没错,开始实践我也这样认为的,但其实不然,随着你的业务疯狂迭代,你觉得你的三层架构还能完整描述核心业务吗?当然不能,至少在我们这是这样的,都不用2-3年的跨度,有些代码不到1年都已经没法看;用了DDD领域,你的entity肯定是能把核心业务规则、业务逻辑能讲明白的！
+- 最后也是最重要的一点,什么是DDD?,DDD这一层拿出来,他依旧能描述出你当前核心业务逻辑;就像你去剥开洋葱,最里面才是本质
 
 ## 参考
 
