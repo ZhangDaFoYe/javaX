@@ -1,6 +1,6 @@
 # [你在教我做事?]系列之老三层架构到DDD的实战
 
-> 你在教我做事啊?这一波我又大了七八个,还全部大残
+> 你在教我做事啊?这一波我又大了七八个,还全部大残 		-- 峡谷最帅的吕德华
 
 ## 订单案例
 
@@ -89,30 +89,30 @@ public class OrderController {
 - 3.操作数据库
 - 4.整合返回结果
 
-> ```java
-> @Service
-> public class OrderServiceImpl implements OrderService {
->     @Resource
->     private UserCenterAdapter userCenterAdapter;
->     @Resource
->     private GoodsCenterAdapter goodsCenterAdapter;
->     @Resource
->     private OrderDao orderDao;
-> 
->     @Override
->     public OrderBO createOrder(CreateRequestDTO createRequestDTO) {
->         // TODO 参数校验
->         // TODO 调用用户中心查询用户信息 & check
->         UserResponseDTO userResponseDTO = userCenterAdapter.queryUser(new QueryUserInfoRequestDTO());
->         // TODO 调用商品中心查询商品信息 & check
->         goodsCenterAdapter.queryGoodsInfo(new QueryGoodsInfoRequestDTO());
->         // TODO 创建订单
->         orderDao.insertOrUpdate(new OrderDO());
->         // TODO 整合DO&DTO返回订单BO
->         return new OrderBO();
->     }
-> }
-> ```
+```java
+@Service
+public class OrderServiceImpl implements OrderService {
+  @Resource
+    private UserCenterAdapter userCenterAdapter;
+    @Resource
+    private GoodsCenterAdapter goodsCenterAdapter;
+    @Resource
+    private OrderDao orderDao;
+
+    @Override
+    public OrderBO createOrder(CreateRequestDTO createRequestDTO) {
+        // TODO 参数校验
+        // TODO 调用用户中心查询用户信息 & check
+        UserResponseDTO userResponseDTO = userCenterAdapter.queryUser(new QueryUserInfoRequestDTO());
+        // TODO 调用商品中心查询商品信息 & check
+        goodsCenterAdapter.queryGoodsInfo(new QueryGoodsInfoRequestDTO());
+        // TODO 创建订单
+        orderDao.insertOrUpdate(new OrderDO());
+        // TODO 整合DO&DTO返回订单BO
+        return new OrderBO();
+    }
+}
+```
 
 ## MVC存在的一些问题
 
