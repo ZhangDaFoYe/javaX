@@ -303,22 +303,22 @@ public class Address {
 ```xml
 com.xx.yy
 
-	- common --> 通用层(配置常量,aop工具)
-		- aop
-		- config
-		- constant
+    - common --> 通用层(配置常量,aop工具)
+        - aop
+        - config
+        - constant
 
-	- application --> 应用层
-		- order --> 订单相关
-			* OrderAppService.java
-		- contract --> 合同相关
-			* ContractAppService.java
-		- pay --> 支付相关
-			* PayAppService.java
-		- carserve --> 车辆服务
-			* CarServeAppService.java
-		- cardeliver --> 车辆交付
-			* CarDeliverAppService.java
+    - application --> 应用层
+        - order --> 订单相关
+            * OrderAppService.java
+        - contract --> 合同相关
+            * ContractAppService.java
+        - pay --> 支付相关
+            * PayAppService.java
+        - carserve --> 车辆服务
+            * CarServeAppService.java
+        - cardeliver --> 车辆交付
+            * CarDeliverAppService.java
 
     - domain --> 领域层
         - order --> 订单领域
